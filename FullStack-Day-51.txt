@@ -1,0 +1,43 @@
+Day 51:
+==========
+
+PDBC (Python Database Connectivity)
+=========================================
+PDBC refers to connecting Python applications with databases to store, retrieve, update, and delete data.
+Python follows the DB-API 2.0 standard, which provides a common interface for databases like MySQL, PostgreSQL, Oracle, and SQLite.
+
+Common steps:
+
+Import database module
+
+Create connection
+
+Create cursor
+
+Execute SQL queries
+
+Commit & close connection
+
+Example (SQLite):
+
+import sqlite3
+
+con = sqlite3.connect("test.db")
+cur = con.cursor()
+
+cur.execute("CREATE TABLE IF NOT EXISTS student(id INT, name TEXT)")
+cur.execute("INSERT INTO student VALUES (1, 'Nikhil')")
+
+con.commit()
+con.close()
+
+
+Key Points:
+
+Uses SQL queries
+
+Cursor executes commands
+
+commit() saves changes
+
+close() releases resources
